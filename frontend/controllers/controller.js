@@ -30,7 +30,4 @@ $scope.message = "Home";
         console.log("Meine Fragen:");
         console.log(res);
     });
-
-
 }]);
-

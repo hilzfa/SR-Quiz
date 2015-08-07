@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 app.get('/getUser',function(req,res){
     db.users.find({},function(err,doc){
-        console.log("i sent your users!");
+        console.log("I sent your users!");
         res.json(doc);
 		console.log(err);
     });
@@ -32,7 +32,7 @@ app.get('/getQuestion',function(req,res){
 //app.get('/feedback/', function (req, res) {
 //    db.answer.find({question: "What drives success at SAP?"},function(err, doc) {
 //        var result = doc[Math.floor((Math.random())*(doc.length))];
-//        res.json(result);
+//        res.json(result);gg
 //        });
 //
 //});
@@ -47,3 +47,9 @@ app.get('/getQuestion',function(req,res){
 
 app.listen(2000);
 console.log("RefereeQuiz runs on Port 2000");
+console.log("____________");
+console.log("| ^^     ^^|");
+console.log("|  O     O |");
+console.log("|     |    |");
+console.log("|  '-----' |");
+console.log("|__________|");
