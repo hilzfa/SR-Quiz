@@ -1,0 +1,47 @@
+.StyleBtn {
+
+    outline: none;
+    min-width: 100px;
+}
+
+/*-------------------------------------------------------quizButton--------------------------------------------------------------*/
+.quizBtn,
+.quizBtn:visited {
+    padding: .5em;
+    margin: 20px;
+
+    background-color: #46B642;
+    opacity: 0.5;
+    color: white;
+    /*border-color: brown;*/
+    border: dashed 1px white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.3);
+}
+
+.quizBtn:hover {
+    border: solid 1px white;
+    opacity: 1;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.3);
+}
+
+.quizBtn:active {
+    border: none;
+    background-color: #466942;
+    color: white;
+}
+
+/*-------------------------------------------------------navButton--------------------------------------------------------------*/
+.navBtn {
+    padding: .4em;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.3);
+    background-color: silver;
+}
+
+.navBtn:hover {
+    background-color: lightgrey;
+}
