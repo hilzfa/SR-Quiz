@@ -1,0 +1,68 @@
+nav.navbar > div.container-fluid{
+  background-color: rgba(255, 0, 0, 0);
+  color: white;
+  border-bottom: 1px solid;
+  margin-bottom: 20px;
+
+}
+.navbar-fixed-top{
+  position: static !important;
+}
+
+nav.navbar{
+  border-radius: 0;
+  border: 0px;
+}
+.navbar-right > li{
+  padding-right: 10px;
+}
+
+.nav > li > a:hover:after,
+.nav > li > a:focus:after
+{
+  color: white ;
+  /*transition*/
+  width: 100%;
+  background: white;
+
+
+}
+.nav > li{
+  display: inline-block;
+  float: none;
+}
+.navbar-toggle{
+  color:white;
+  border: 1px solid white;
+  line-height: 1;
+
+}
+.navbar-toggle:hover{
+  background-color: rgba(196, 196, 195, 0.53);
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus{
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.nav > li > a:after{
+  content: '';
+	display: block;
+	margin: auto;
+	height: 2px;
+	width: 0px;
+	background: transparent;
+	transition: width .3s ease, background-color .3s ease;
+}
+
+.nav > li > a{
+  color: white;
+  margin-left: 10px;
+
+  /*transition*/
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+
+}
