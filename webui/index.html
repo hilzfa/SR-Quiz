@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="quiz">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <title>SR-Quiz</title>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular/angular-route.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="controller/main.js"></script>
+    <script src="controller/home.js"></script>
+    <script src="controller/quiz.js"></script>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body ng-controller="homeCtrl">
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ng-click="currentLocation('home')"href="#/"><img src="img/logo.png" alt="logo"></img></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ng-class="{'active' : quiz}"><a ng-click="currentLocation('quiz')" href="#quiz">quiz</a></li>
+    </div>
+  </div>
+</nav>
+
+  <div ng-view></div>
+
+  <div class="bottomLine">| 2016 SR-Quiz &copy; by Locke21 |</div>
+
+  </body>
+</html>
