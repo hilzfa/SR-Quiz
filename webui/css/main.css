@@ -14,6 +14,14 @@ body{
   width: 100%;
   text-align: center;
 }
+.well{
+  color: white;
+  margin-bottom: 10px;
+  background-color: rgba(15, 202, 61, 0.17) !important;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25) !important;
+  background-image: none;
+  border:none
+}
 .myBrand{
   width: 32px;
   height: 32px;
@@ -24,4 +32,19 @@ body{
   height: 32px;
   border-radius: 16px;
   border: 1px solid white;
+}
+
+.answerBtn{
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+.modal-footer > i:hover{
+  cursor: pointer;
+}
+.opportunities{
+  border-bottom: 1px solid white;
+    margin-bottom: 10px;  
 }
