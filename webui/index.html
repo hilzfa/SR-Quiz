@@ -3,15 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Login</title>
-
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="js/login.js"></script>
   </head>
   <body>
     Welcome to login..
 
-    <form action="/" method="post">
-      <input type="text" name="username"/>
-      <input type="password" name="password"/>
-      <input type="submit" value="login"/>
-    </form>
+    
+      <input id="username" type="text" />
+      <input id="password" type="password"/>
+      <input id="loginBtn" type="button" value="login"/>
+
+      <span id="usernameDisplay"></span>
+    
   </body>
 </html>

@@ -1,21 +1,32 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
 app.use(express.static('../webui/'));
+
+
 var rootView = '../webui';
 
 
 
 app.get('/',function(req,res){
-  console.log(reg);
   res.sendFile('index.html', {root: rootView });
 
 });
 
 
 app.post('/',function(req,res){
-  console.log(req.params.username);
-  res.statusCode = 200;
-    res.end();
+	// To Write a Cookie
+  
+  res.writeHead(200, {
+    'Set-Cookie': 'username='+req.body.username,
+    'Content-Type': 'text/plain',
+    'data': req.body.username
+  }); 
+  res.write(req.body.username);
+  res.end();
+	
 
 });
 
