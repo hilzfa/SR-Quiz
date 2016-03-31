@@ -9,6 +9,7 @@ function getCookie(cname) {
     return "";
 }
 
+/*
 $('document').ready(function(){
 	if(getCookie("username") != ""){
 		$('#usernameDisplay').html(getCookie("username"));
@@ -17,12 +18,12 @@ $('document').ready(function(){
 		var data = {};
 					data.username = $('#username').val();
 					data.password = $('#password').val();
-					
+
 					$.ajax({
 						type: 'POST',
 						data: JSON.stringify(data),
 				        contentType: 'application/json',
-                        url: 'http://localhost:8000/',						
+                        url: 'http://localhost:8000/',
                         success: function(data) {
                             console.log('success');
                             $('#usernameDisplay').html(getCookie("username"));
@@ -31,3 +32,4 @@ $('document').ready(function(){
                     });
 	})
 	});
+*/

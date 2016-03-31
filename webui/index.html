@@ -3,18 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="js/login.js"></script>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/login.js"></script>
+
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css">
   </head>
   <body>
     Welcome to login..
 
-    
-      <input id="username" type="text" />
-      <input id="password" type="password"/>
-      <input id="loginBtn" type="button" value="login"/>
+    <form action="/authenticate" method="post">
+      <input id="username" name="username" type="text" />
+      <input id="password" name="password" type="password"/>
+      <input id="loginBtn" type="submit" value="login"/>
+    </form>
 
-      <span id="usernameDisplay"></span>
+
+
     
   </body>
 </html>
