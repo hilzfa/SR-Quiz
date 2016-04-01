@@ -8,6 +8,29 @@ function getCookie(cname) {
     }
     return "";
 }
+$('document').ready(function(){
+	$('#username , #password').keydown(function(event){
+		if(event.keyCode == 13){
+			var data = {};
+			data.username = $('#username').val();
+			data.password = $('#password').val();
+
+			$.ajax({
+				type: 'POST',
+				data: JSON.stringify(data),
+				contentType: 'application/json',
+				url: 'http://localhost:8000/authenticate',
+				success: function(data) {
+					console.log('success');
+					$('#usernameDisplay').html(getCookie("username"));
+					console.log(JSON.stringify(data));
+					window.location = window.location.search;
+				}
+			});
+
+		}
+	});
+});
 
 /*
 $('document').ready(function(){

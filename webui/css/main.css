@@ -48,3 +48,21 @@ body{
   border-bottom: 1px solid white;
     margin-bottom: 10px;  
 }
+form > input.form-control{
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border: none;
+    border-left: 1px solid white;
+    /* border-bottom: 2px solid white; */
+    border-radius: 0;
+  box-shadow: 0px 0px 0px;
+  -webkit-box-shadow: 0 0 0 ;
+}
+form > input.form-control:focus{
+  border-left: 2px solid white;
+  outline: 0;
+  box-shadow: 0px 0px 0px;
+   -webkit-box-shadow: 0 0 0 ;
+  /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); */
+}

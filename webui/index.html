@@ -1,25 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <script src="/jquery/dist/jquery.js"></script>
-    <script src="/login.js"></script>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
 
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css">
-  </head>
-  <body>
-    Welcome to login..
-
-    <form action="/authenticate" method="post">
-      <input id="username" name="username" type="text" />
-      <input id="password" name="password" type="password"/>
-      <input id="loginBtn" type="submit" value="login"/>
-    </form>
+  <script src="/jquery/dist/jquery.js"></script>
+  <script src="/angular/angular.js"></script>
+  <script src="/angular/angular-route.js"></script>
+  <script src="/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/login.js"></script>
+  <!--<script src="/main.js"></script>-->
 
 
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/navbar.css">
 
-    
-  </body>
+
+</head>
+<body >
+
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"><i class="glyphicon glyphicon-menu-hamburger"></i></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ng-click="currentLocation('home')" href="#/">
+        <img src="/logo.png" alt="Brand" class="myBrand">
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav navbar-right">
+        <form class="form-inline navbar-form" action="/authenticate" method="post">
+          <input id="username" class="form-control" placeholder="username" name="username" type="text" />
+          <input id="password" class="form-control" placeholder="password" name="password" type="password"/>
+
+          <!--<quiz.button class="form-control" type="submit"><i class="glyphicon glyphicon-chevron-right"></i></quiz.button>-->
+
+        </form>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+
+</body>
 </html>

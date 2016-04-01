@@ -44,16 +44,15 @@ app.get('/authenticate',function(req,res){
 });
 
 app.post('/authenticate',function(req,res){
-	// To Write a Cookie
-currentSession = req.session;
-  currentSession.username = "fabian";
-  /*res.writeHead(200, {
-    'Set-Cookie': 'username='+req.body.username,
-    'Content-Type': 'text/plain'
-  }); */
-  res.redirect('/authenticate');
+  // To Write a Cookie
+
+  /* res.writeHead(200, {
+   'Set-Cookie': 'username='+req.body.username,
+   'Content-Type': 'text/plain'
+   });*/
+  res.cookie('username',req.body.username);
   res.end();
-	
+
 
 });
 
