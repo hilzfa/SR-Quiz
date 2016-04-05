@@ -1,7 +1,7 @@
 app.controller('homeCtrl',['$scope','$location',function($scope,$loacation){
   $scope.quiz = false;
 
-  $scope.user = "Fabian";
+  $scope.user = JSON.parse(localStorage.getItem("user")).username;
 
   $scope.currentLocation = function(loc){
     switch (loc) {

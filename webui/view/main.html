@@ -15,6 +15,7 @@
     <script src="/quiz.js"></script>
     <script src="/profile.js"></script>
     <script src="/dashboard.js"></script>
+    <script src="/control.js"></script>
 
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css">
@@ -42,18 +43,19 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" ng-click="currentLocation('home')" href="#/">
-        <img src="/logo.png" alt="Brand" class="myBrand">
+        <img src="/logo_5.png" alt="Brand" class="myBrand">
       </a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-left">
         <li ng-class="{'active' : dashboard}"><a ng-click="currentLocation('dashboard')" href="#dashboard">dashboard</a></li>
         <li ng-class="{'active' : profile}"><a ng-click="currentLocation('profile')" href="#profile">profile</a></li>
         <li ng-class="{'active' : quiz}"><a ng-click="currentLocation('quiz')" href="#quiz">quiz</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <li ng-class="{'active' : impressum}"><a ng-click="currentLocation('impressum')" href="#impressum">impressum</a></li>
+          <li><a onclick="logout()">logout</a></li>
           <li><img src="/unknown-user.png" class="profilePic"> <i>{{user}}</i></li>
       </ul>
     </div>

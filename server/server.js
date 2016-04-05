@@ -1,19 +1,19 @@
 var express = require('express');
 var session = require('express-session');
-var app = express();
-var MongoDB = require('./logic/mongoConnection');
-
 var bodyParser = require('body-parser');
 
-MongoDB.connect();
-
-app.use(bodyParser.json());
+var cookieParser = require('cookie-parser');
+var app = express();
 app.use(session({
   secret: '123456789qwertz',
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
+  saveUninitialized: true
 }));
+var MongoDB = require('./logic/mongoConnection');
+
+app.use(bodyParser.json());
+app.use(cookieParser());
+
 app.use(express.static('../webui/bower_components'));
 app.use(express.static('../webui/controller'));
 app.use(express.static('../webui/css'));
@@ -28,36 +28,51 @@ var rootView = '../webui';
 
 var currentSession;
 app.get('/',function(req,res){
-  res.redirect('/authenticate');
+
+  currentSession = req.session;
+  if(currentSession.username == req.cookies['username'] && currentSession.username != undefined){
+    res.sendFile('/view/main.html', {root: rootView });
+  }
+  else{
+    res.redirect('/authenticate');
+  }
+
 });
 
 app.get('/authenticate',function(req,res){
-  console.log("session: "+JSON.stringify(req.session));
-  currentSession = JSON.stringify(req.session);
-  console.log(currentSession.username);
-  if(currentSession.username){
-    res.redirect('/main');
+
+  currentSession = req.session;
+
+  if(currentSession.username == req.cookies['username'] && currentSession.username != undefined){
+    res.redirect('/');
   }else{
     res.sendFile('index.html', {root: rootView });
   }
 
 });
 
-app.post('/authenticate',function(req,res){
-  // To Write a Cookie
+app.post('/authenticate',function(req,res) {
+  currentSession = req.session;
+  MongoDB.authenticate(req.body.username,req.body.password).then(function (feedback) {
+    if (feedback) {
+      currentSession.username = req.body.username;
+      res.cookie("username", feedback[0].username);
+      res.end(JSON.stringify(feedback[0]));
+    }
+    else {
+      res.end('error');
+    }
+  });
+});
 
-  /* res.writeHead(200, {
-   'Set-Cookie': 'username='+req.body.username,
-   'Content-Type': 'text/plain'
-   });*/
-  res.cookie('username',req.body.username);
+
+app.post('/logout',function(req,res){
+  currentSession = req.session;
+  currentSession.destroy();
+  res.clearCookie("username");
   res.end();
 
 
-});
-
-app.get('/main',function(req,res){
-  res.sendFile('/view/main.html', {root: rootView });
 });
 
 

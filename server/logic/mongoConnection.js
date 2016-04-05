@@ -4,22 +4,32 @@
 
 (function() {
 
-    var MongoClient = require('mongodb').MongoClient;
-    var assert = require('assert');
+    var Promise = require('bluebird');
+    var MongoClient = Promise.promisifyAll(require('mongodb')).MongoClient;
 
-    var url = 'mongodb://localhost:27017/test';
+    var url = 'mongodb://localhost:27017/quizDatabase';
 
-    module.exports.connect = function() {
-        return MongoClient.connect(url, function(err, db) {
-            assert.equal(null, err);
-            console.log("Connected correctly to server.");
-            var collection = db.collection('name');
-            var cursor = collection.find();
-            cursor.toArray(function(err,items){
-                console.log(items);
-            });
-            
-        });
-    }
+    module.exports.authenticate = function(username, password) {
+        return new Promise(function(resolve) {
+            MongoClient.connectAsync(url)
+                .then(function (db) {
+                    return db.collection('users').findAsync({'username': username})
+                })
+                .then(function (cursor) {
+                    return cursor.toArrayAsync(function (err, item) {
+                        if (item != "" && item[0].password === password) {
+                            resolve(item);
+                        }
+                        else {
+                            resolve(false);
+                        }
+
+                    });
+                })
+                .catch(function (err) {
+                    throw err;
+                });
+
+        })};
 
 }());
