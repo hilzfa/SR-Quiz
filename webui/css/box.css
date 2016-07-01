@@ -8,10 +8,10 @@
   color: white;
   box-shadow: 0px 0px 10px 4px white;
 }
-.modal-body > div.input-group-sm > input.form-control{
+.modal-body > form > div.form-group > input.form-control{
   margin-bottom: 10px;
 }
-.modal-body > div.input-group-sm > input.form-control{
+.modal-body > form > div.form-group > input.form-control{
   background-color: transparent;
   color: white;
   outline: none;
@@ -22,7 +22,7 @@
   box-shadow: 0px 0px 0px;
   -webkit-box-shadow: 0 0 0 ;
 }
-.modal-body > div.input-group-sm > input.form-control:focus{
+.modal-body > form > div.form-group > input.form-control:focus{
   border: 2px solid white;
   border-bottom: none;
   outline: 0;

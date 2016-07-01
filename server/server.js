@@ -66,6 +66,20 @@ app.post('/authenticate',function(req,res) {
   });
 });
 
+app.post('/createUser', function(req,res) {
+  currentSession = req.session;
+  MongoDB.createUser(req.body.username, req.body.password).then(function(result){
+    if(result!==0){
+      currentSession.username = req.body.username;
+      res.cookie("username", result);
+      res.end("User angelegt: "+result);
+    }
+    else if(result===0){
+      res.end("User "+ req.body.username+" already exists.");
+    }
+  })
+});
+
 
 app.post('/logout',function(req,res){
   currentSession = req.session;

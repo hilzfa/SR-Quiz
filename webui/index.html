@@ -10,6 +10,10 @@
   <script src="/bootstrap/dist/js/bootstrap.js"></script>
   <script src="/md5.js"></script>
   <script src="/login.js"></script>
+  <script src="/register.js"></script>
+  <script src="/validator.js"></script>
+
+
   <!--<script src="/main.js"></script>-->
 
 
@@ -75,30 +79,44 @@
         <h2>Become a member!</h2>
       </div>
       <div class="modal-body">
-        <div class="input-group-sm">
-          <label for="newUsername">Username</label>
-          <input id="newUsername" class="form-control" placeholder="enter username.."/>
+        <form id="registerForm" role="form">
+          <div class="form-group">
+            <label for="newUsername" class="control-label">Username</label>
+            <input id="newUsername" type="text" maxlength="10" data-minlength="6" class="form-control" placeholder="enter username.." required/>
 
-          <label for="newUsername">Birthday</label>
-          <input id="birthday" class="form-control" placeholder="enter your birthday.."/>
+          </div>
+          <div class="form-group">
+            <label for="birthday" class="label-control">Birthday</label>
+            <input id="birthday" class="form-control" placeholder="enter your birthday.."/>
+          </div>
+          <div class="form-group has-feedback">
+            <label for="newUsername" class="control-label">E-Mail</label>
+            <input id="email" type="email" class="form-control" placeholder="enter email.."/>
+          </div>
+          <div class="form-group">
+            <label for="clubName" class="control-label">Club</label>
+            <input id="clubName" class="form-control" placeholder="enter club.."/>
+          </div>
+          <br><br>
 
-          <label for="newUsername">E-Mail</label>
-          <input id="email" class="form-control" placeholder="enter email.."/>
+          <div class="form-group">
+            <label for="newPassword" class="control-label">Password</label>
+            <input id="newPassword" class="form-control" placeholder="enter password.." required/>
+          </div>
+          <div class="form-group">
+            <label for="newPassword2" class="control-label">Repeat Password</label>
+            <input id="newPassword2" class="form-control" placeholder="enter password again.."/>
+          </div>
 
-          <label for="newUsername">Club</label>
-          <input id="clubName" class="form-control" placeholder="enter club.."/>
-        </div>
-        <br><br>
-        <div class="input-group-sm">
-          <label for="newPassword">Password</label>
-          <input id="newPassword" class="form-control" placeholder="enter password.."/>
 
-          <label for="newPassword2">Repeat Password</label>
-          <input id="newPassword2" class="form-control" placeholder="enter password again.."/>
+
+      <div class="modal-footer">
+        <div class="form-group">
+          <button id="registerBtn" type="submit" class="btn btn-success">Sign Up</button>
         </div>
       </div>
-      <div class="modal-footer">
-        <input type="button" class="btn btn-success" value="Sign Up"/>
+        </form>
+
       </div>
     </div>
   </div>

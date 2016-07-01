@@ -32,4 +32,28 @@
 
         })};
 
+    module.exports.createUser = function(username, password){
+        return new Promise(function(resolve){
+            MongoClient.connectAsync(url)
+                .then(function(db){
+                    if(username){
+                        db.collection('users').insertOne({
+                            "username":username,
+                            "password":password
+                        }, function(err,result){
+                            if(err === null){
+                                resolve(username);
+                                db.close();
+                            }
+                            else if(err.message.indexOf("duplicate key")>1){
+                                resolve(0);
+
+                            }
+                        });
+                    }
+                });
+
+        });
+    }
+
 }());
