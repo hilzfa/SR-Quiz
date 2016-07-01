@@ -9,33 +9,55 @@ function getCookie(cname) {
 	return "";
 }
 
+function triggerLogin(){
+	var data = {};
+	data.username = $('#username').val();
+	data.password = md5($('#password').val());
+
+	$.ajax({
+		type: 'POST',
+		data: JSON.stringify(data),
+		contentType: 'application/json',
+		url: 'http://localhost:8000/authenticate',
+		success: function(data) {
+			console.log('success');
+			$('#usernameDisplay').html(getCookie("username"));
+			localStorage.setItem("user",(data));
+			window.location = window.location.search;
+		},
+		error: function(data){
+			console.log(data);
+		}
+	});
+}
+
+
+
 
 $('document').ready(function(){
 
+
 	$('#username , #password').keydown(function(event){
 		if(event.keyCode == 13){
-			var data = {};
-			data.username = $('#username').val();
-			data.password = md5($('#password').val());
-
-			$.ajax({
-				type: 'POST',
-				data: JSON.stringify(data),
-				contentType: 'application/json',
-				url: 'http://localhost:8000/authenticate',
-				success: function(data) {
-					console.log('success');
-					$('#usernameDisplay').html(getCookie("username"));
-					localStorage.setItem("user",(data));
-					window.location = window.location.search;
-				},
-				error: function(data){
-					console.log(data);
-				}
-			});
-
+			triggerLogin();
 		}
 	});
+
+	$('#loginBtn').on('click', function(){
+		triggerLogin();
+	});
+
+	$('#collapseFunctions').on('click',function(){
+		$('#moreAbout').toggle('collapse');
+		if($(this).html() === "hide functions.."){
+			$(this).html("show functions..");
+		}else{
+			$(this).html("hide functions..");
+		}
+
+	});
+
+
 
 
 });

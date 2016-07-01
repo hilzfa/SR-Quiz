@@ -1,7 +1,7 @@
 nav.navbar > div.container-fluid{
+  border-top: 5px solid #16a085;
   background-color: rgba(255, 0, 0, 0);
   color: white;
-  border-bottom: 1px solid;
   margin-bottom: 20px;
 
 }

@@ -1,0 +1,37 @@
+.profileHeader{
+
+
+    border-bottom: 1px solid white;
+    padding: 10px;
+    padding-bottom: 0px !important;
+    margin: 10px !important;
+    overflow-x: hidden;
+}
+
+
+    @media (max-width: 768px) {
+        .userPic{
+            margin: auto;
+            border: 3px solid #16a085 !important;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background: url("/unknown-user.png") no-repeat center;
+            background-size: cover;
+        }
+
+        .userName{
+            margin: auto;
+            color: white;
+            padding-top: 10px;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        .profileBox{
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid white;
+        }
+
+    }

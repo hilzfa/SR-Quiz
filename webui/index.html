@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
   <title>Login</title>
 
   <script src="/jquery/dist/jquery.js"></script>
@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css">
   <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/box.css">
   <link rel="stylesheet" href="/navbar.css">
 
 
@@ -40,12 +41,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav navbar-right">
-        <form class="form-inline navbar-form" action="/authenticate" method="post">
+        <form class="form-inline navbar-form" method="post">
           <input id="username" class="form-control" placeholder="username" name="username" type="text" />
           <input id="password" class="form-control" placeholder="password" name="password" type="password"/>
-
-          <!--<quiz.button class="form-control" type="submit"><i class="glyphicon glyphicon-chevron-right"></i></quiz.button>-->
-
+          <input type="button" id="loginBtn" class="visible-xs hidden-sm hidden-md hidden-lg loginBtn" value="Login"/>
         </form>
       </ul>
     </div>
@@ -53,6 +52,60 @@
   </div>
 </nav>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5 Box">
+      <div class="modal-header">
+        <h2>About SR-Quiz</h2>
+      </div>
+      <div class="modal-body">
+        This site is about <a id="collapseFunctions" data-target="#moreAbout">show functions..</a>
+        <div class="collapse" id="moreAbout">
+          Functions:
+          <ul>
+            <li>function1</li>
+            <li>function2</li>
+            <li>function3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-md-offset-1 Box">
+      <div class="modal-header">
+        <h2>Become a member!</h2>
+      </div>
+      <div class="modal-body">
+        <div class="input-group-sm">
+          <label for="newUsername">Username</label>
+          <input id="newUsername" class="form-control" placeholder="enter username.."/>
+
+          <label for="newUsername">Birthday</label>
+          <input id="birthday" class="form-control" placeholder="enter your birthday.."/>
+
+          <label for="newUsername">E-Mail</label>
+          <input id="email" class="form-control" placeholder="enter email.."/>
+
+          <label for="newUsername">Club</label>
+          <input id="clubName" class="form-control" placeholder="enter club.."/>
+        </div>
+        <br><br>
+        <div class="input-group-sm">
+          <label for="newPassword">Password</label>
+          <input id="newPassword" class="form-control" placeholder="enter password.."/>
+
+          <label for="newPassword2">Repeat Password</label>
+          <input id="newPassword2" class="form-control" placeholder="enter password again.."/>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <input type="button" class="btn btn-success" value="Sign Up"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="bottomLine">| 2016 SR-Quiz &copy; by Locke21 |</div>
 
 
 

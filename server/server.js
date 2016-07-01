@@ -30,6 +30,7 @@ var currentSession;
 app.get('/',function(req,res){
 
   currentSession = req.session;
+
   if(currentSession.username == req.cookies['username'] && currentSession.username != undefined){
     res.sendFile('/view/main.html', {root: rootView });
   }

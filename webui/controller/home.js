@@ -3,6 +3,18 @@ app.controller('homeCtrl',['$scope','$location',function($scope,$loacation){
 
   $scope.user = JSON.parse(localStorage.getItem("user")).username;
 
+
+  $scope.setImg = function(){
+    var url = JSON.parse(localStorage.getItem("user")).imgUrl;
+      if(url != undefined){
+        $scope.userImg = url;
+      }else{
+        $scope.userImg = "/unknown-user.png";
+      }
+  };
+
+  $scope.setImg();
+
   $scope.currentLocation = function(loc){
     switch (loc) {
       case 'quiz':
