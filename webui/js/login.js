@@ -39,6 +39,7 @@ $('document').ready(function(){
 
 	$('#username , #password').keydown(function(event){
 		if(event.keyCode == 13){
+			$('#bottomLine').addClass('loading');
 			triggerLogin();
 		}
 	});

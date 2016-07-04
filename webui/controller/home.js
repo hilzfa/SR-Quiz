@@ -2,7 +2,7 @@ app.controller('homeCtrl',['$scope','$location',function($scope,$loacation){
   $scope.quiz = false;
 
   $scope.user = JSON.parse(localStorage.getItem("user")).username;
-
+  $scope.admin = JSON.parse(localStorage.getItem("user")).adminFlag;
 
   $scope.setImg = function(){
     var url = JSON.parse(localStorage.getItem("user")).imgUrl;

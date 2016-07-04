@@ -55,6 +55,7 @@
         <li ng-class="{'active' : quiz}"><a ng-click="currentLocation('quiz')" href="#quiz">quiz</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+          <li ng-if="admin"><a>adminPanel</a></li>
           <li ng-class="{'active' : impressum}"><a ng-click="currentLocation('impressum')" href="#impressum">impressum</a></li>
           <li><a onclick="logout()">logout</a></li>
           <li><img ng-src="{{userImg}}" class="profilePic" align="middle"> </li>
