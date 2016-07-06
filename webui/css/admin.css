@@ -2,4 +2,69 @@
     width: 100%;
     background-color: black;
     color: white;
+
+}
+.adminHeader{
+    padding-bottom: 0 !important;
+
+}
+.adminHeader > span > span.refreshBtn{
+    line-height: 1.4;
+    margin: 10px;
+    font-size: x-large;
+}
+.adminHeader > span > span.refreshBtn:hover{
+    color: #1b6d85;
+    cursor: pointer;
+}
+.adminHeader > span > input[type='search']{
+    border: none;
+    color: white !important;
+    background-color: transparent;
+    border-bottom: 3px dashed transparent;
+    border-left: 2px solid white;
+    padding-left: 10px;
+    padding-top: 10px;
+
+}
+.adminHeader > span > input[type='search']:focus{
+    border-left: 3px solid white;
+    outline: none;
+}
+.adminForm > div > div.form-group > textarea{
+    min-height: 200px;
+    max-height: 200px;
+    resize: none;
+}
+.publishBtn{
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 50px !important;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: #1b6d85;
+    border: 2px solid #1b6d85;
+}
+.publishBtn:hover{
+    cursor: pointer;
+    border: 2px solid rgba(175, 220, 255, 0.72);
+}
+.addEntryBtn{
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: #1b6d85;
+    margin-bottom: 40px;
+    opacity: .7;
+}
+.addEntryBtn:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.errorMessage{
+    background-color: red;
+    padding:15px;
+    color:white;
 }

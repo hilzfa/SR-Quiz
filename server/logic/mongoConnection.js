@@ -48,13 +48,45 @@
                             }
                             else if(err.message.indexOf("duplicate key")>1){
                                 resolve(0);
-
                             }
                         });
                     }
                 });
 
         });
+    };
+    module.exports.createEntry = function(question, answer){
+        return new Promise(function (resolve){
+            MongoClient.connectAsync(url)
+                .then(function(db){
+                    if(question && answer){
+                        db.collection('questions').insertOne({
+                            "question":question
+                        },function(err, resultQuestion){
+                            if(err === null){
+                                console.log(resultQuestion.insertedId);
+                                db.collection('answers').insertOne({
+                                    "answer":answer,
+                                    "question_id": resultQuestion.insertedId
+                                },function(err, resultAnswer){
+                                    if(err === null){
+                                        var resultArray = [
+                                            {
+                                                "question":question,
+                                                "_id":{
+                                                    "$oid":resultQuestion.insertedId
+                                                },
+                                                "answer":answer
+                                            }
+                                        ];
+                                        resolve(resultArray);
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+        })
     }
 
 }());

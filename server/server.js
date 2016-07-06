@@ -80,6 +80,16 @@ app.post('/createUser', function(req,res) {
   })
 });
 
+app.post('/createQuestionEntry', function(req,res){
+  currentSession = req.session;
+  MongoDB.createEntry(req.body.question, req.body.answer).then(function(insertedArray){
+      if(insertedArray!==0){
+        
+        res.send(insertedArray);
+      }
+  });
+});
+
 
 app.post('/logout',function(req,res){
   currentSession = req.session;

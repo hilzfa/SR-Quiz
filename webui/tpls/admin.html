@@ -1,20 +1,67 @@
 <link rel="stylesheet" href="/admin.css"/>
-<script type="application/javascript" src="/admin.js"/>
+<link rel="stylesheet" href="/spinner.css"/>
+<div ng-show="errorMsg" id="errorMsg" class="errorMessage"></div>
+<div ng-class="{'loading':loading}" class="modal-header myBox adminHeader">
+    <span style="float: left;">//Admin Panel</span>
+    <span class="input-group" style="display: inline; float: right;">
+        <span class="refreshBtn" ng-click="fetchQuestions()"><i class="glyphicon glyphicon-refresh"></i></span>
+        <input style="display:inline; float: right"placeholder="suche.." type="search"/>
 
-<div class="modal-header myBox">//Admin Panel</div>
+    </span>
+</div>
+
 <div class="modal-body myBox">
+
     <div class="row">
-        <form role="form">
+        <table class="table col-lg-12">
+            <thead>
+                <th>ID</th>
+                <th>FRAGE</th>
+                <th>ANTWORT</th>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="item in questionArray">
+                    <td>{{item._id.$oid}}</td>
+                    <td>{{item.question}}</td>
+                    <td>{{item.answer}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div data-toggle="collapse" id="addEntryBtn" data-target="#currentTable" class="col-lg-12 addEntryBtn">
+            Add Entry
+        </div>
+    </div>
+    <div id="currentTable"  class="collapse">
+
+        <form role="form" class="adminForm">
+                <div class="row">
+                    <div class=" form-group col-lg-6">
+                            <label for="versionSelection" class="control-label">Version der Zeitung</label>
+                            <select class="form-control" id="versionSelection" name="test" >
+                                <option>02/2015</option>
+                                <option>04/2015</option>
+                                <option>06/2015</option>
+                                <option>08/2015</option>
+                                <option>10/2015</option>
+                            </select>
+
+                    </div>
+                </div>
+            <div class="row">
             <div class="form-group col-lg-6">
                 <label for="newQuestion" class="control-label">Deine neue Frage:</label>
-                <textarea id="newQuestion" class="form-control" placeholder="gebe deine Frage ein"></textarea>
+                <textarea data-ng-model="newQuestion" id="newQuestion" class="form-control" placeholder="gebe deine Frage ein"></textarea>
             </div>
             <div class="form-group col-lg-6">
                 <label for="newAnswer" class="control-label">Die zugehörige Antwort:</label>
-                <textarea id="newAnswer" class="form-control" placeholder="gebe deine Frage ein"></textarea>
+                <textarea data-ng-model="newAnswer" id="newAnswer" class="form-control" placeholder="gebe deine Frage ein"></textarea>
+                <div ng-click="createNewEntry()" class="publishBtn col-lg-2 col-sm-12 col-md-12 col-xs-12">Publish</div>
             </div>
+                </div>
+
         </form>
-
-
     </div>
+
 </div>
+
+

@@ -22,6 +22,7 @@ app.config(function($routeProvider){
       templateUrl : '/impressum.html'
     })
     .when('/adminPanel',{
-    templateUrl : '/admin.html'
+      templateUrl : '/admin.html',
+      controller  : 'adminCtrl'
   });
 });
