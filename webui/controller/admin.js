@@ -27,18 +27,8 @@ app.controller('adminCtrl', function($scope, $timeout){
                                 });
                                 questions[i].answer = (matchedEntry.answer);
 
-
-
-
                                     $scope.questionArray.push(questions[i]);
                                     console.log(questions[i].question);
-                                    
-
-
-
-
-
-
                             }
 
                             $scope.loading=false;

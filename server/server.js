@@ -100,6 +100,11 @@ app.post('/logout',function(req,res){
 
 });
 
+app.get('/allQuestions', function(req,res){
+  MongoDB.getQuestionsArray().then(function(){
+    res.end("bla");
+  });
 
+});
 app.listen(8000);
 console.log("Server is now running on port 8000");
