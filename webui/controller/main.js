@@ -1,5 +1,7 @@
 var app = angular.module('quiz',['ngRoute']);
 
+
+
 app.config(function($routeProvider){
   $routeProvider
     .when('/' ,{

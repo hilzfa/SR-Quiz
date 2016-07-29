@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="/quiz.button.css">
     <script src="/quiz.button.js"></script>
 
+  
   </head>
 
   <body ng-controller="homeCtrl">
@@ -51,15 +52,18 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
-        <li ng-class="{'active' : dashboard}"><a ng-click="currentLocation('dashboard')" href="#dashboard">dashboard</a></li>
-        <li ng-class="{'active' : profile}"><a ng-click="currentLocation('profile')" href="#profile">profile</a></li>
-        <li ng-class="{'active' : quiz}"><a ng-click="currentLocation('quiz')" href="#quiz">quiz</a></li>
+        <!-- <li ng-class="{'active' : dashboard}"><a ng-click="currentLocation('dashboard')" href="#dashboard">dashboard</a></li> -->
+        <!-- <li ng-class="{'active' : profile}"><a ng-click="currentLocation('profile')" href="#profile">profile</a></li> -->
+        <li ng-class="{'active' : quiz}"><a ng-click="currentLocation('quiz')" href="#quiz">QUIZ</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-center">
+        <li><img ng-src="{{userImg}}" class="profilePic" align="middle"> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <li ng-if="admin"><a ng-click="currentLocation('adminPanel')" href="#adminPanel">adminPanel</a></li>
-          <li ng-class="{'active' : impressum}"><a ng-click="currentLocation('impressum')" href="#impressum">impressum</a></li>
-          <li><a onclick="logout()">logout</a></li>
-          <li><img ng-src="{{userImg}}" class="profilePic" align="middle"> </li>
+          <li ng-if="admin"><a ng-click="currentLocation('adminPanel')" href="#adminPanel">ADMINPANEL</a></li>
+          <li ng-class="{'active' : impressum}"><a ng-click="currentLocation('impressum')" href="#impressum">IMPRESSUM</a></li>
+          <li><a onclick="logout()"><i class="glyphicon glyphicon-off"></i></a></li>
+
       </ul>
 
     </div>

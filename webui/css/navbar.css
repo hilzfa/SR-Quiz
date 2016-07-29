@@ -1,5 +1,5 @@
 nav.navbar > div.container-fluid{
-  border-top: 5px solid #16a085;
+  border-top: 5px solid #2ecc71;
   background-color: rgba(255, 0, 0, 0);
   color: white;
   margin-bottom: 20px;
@@ -16,6 +16,9 @@ nav.navbar{
 }
 .navbar-right > li{
   padding-right: 10px;
+}
+.navbar-right > li > a:hover{
+  cursor: pointer;
 }
 
 .nav > li > a:hover:after,

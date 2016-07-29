@@ -21,6 +21,7 @@ app.use(express.static('../webui/js'));
 app.use(express.static('../webui/tpls'));
 app.use(express.static('../webui/directives'));
 app.use(express.static('../webui/img'));
+app.use(express.static('../webui/view'));
 
 
 
@@ -84,7 +85,7 @@ app.post('/createQuestionEntry', function(req,res){
   currentSession = req.session;
   MongoDB.createEntry(req.body.question, req.body.answer).then(function(insertedArray){
       if(insertedArray!==0){
-        
+
         res.send(insertedArray);
       }
   });
