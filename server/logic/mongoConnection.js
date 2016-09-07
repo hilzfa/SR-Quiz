@@ -9,7 +9,7 @@
 
     var url = 'mongodb://localhost:27017/quizDatabase';
     //var url = 'mongodb://admin:1906Selina@ds011775.mlab.com:11775/srquiz';
-    
+
     MongoClient.connect(url, function(err){
          if(err!==null){
              url = 'mongodb://localhost:27017/quizDatabase';

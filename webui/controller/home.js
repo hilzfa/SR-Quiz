@@ -1,7 +1,7 @@
 app.controller('homeCtrl',['$scope','$location',function($scope,$loacation){
   $scope.quiz = false;
 
-  $scope.user = JSON.parse(localStorage.getItem("user")).username;
+  $scope.user = JSON.parse(localStorage.getItem("user")).username.toUpperCase();
   $scope.admin = JSON.parse(localStorage.getItem("user")).adminFlag;
 
   $scope.setImg = function(){

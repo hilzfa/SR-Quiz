@@ -70,3 +70,14 @@ nav.navbar{
   padding-bottom: 3px;
 
 }
+
+.userInteraction{
+  background-color: rgb(13, 15, 14);
+  right: 0;
+  height: 100px;
+  top: 50px;
+  width: 200px;
+  position: absolute;
+  border-radius: 0px 0px 0px 10px;
+  z-index: 10;
+}

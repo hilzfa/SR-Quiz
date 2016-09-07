@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css">
 
     <!-- google-font -->
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'> -->
 
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="/navbar.css">
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="/quiz.button.css">
     <script src="/quiz.button.js"></script>
 
-  
+
   </head>
 
   <body ng-controller="homeCtrl">
@@ -56,18 +56,20 @@
         <!-- <li ng-class="{'active' : profile}"><a ng-click="currentLocation('profile')" href="#profile">profile</a></li> -->
         <li ng-class="{'active' : quiz}"><a ng-click="currentLocation('quiz')" href="#quiz">QUIZ</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-center">
+      <!-- <ul class="nav navbar-nav navbar-center">
         <li><img ng-src="{{userImg}}" class="profilePic" align="middle"> </li>
-      </ul>
+      </ul> -->
       <ul class="nav navbar-nav navbar-right">
           <li ng-if="admin"><a ng-click="currentLocation('adminPanel')" href="#adminPanel">ADMINPANEL</a></li>
           <li ng-class="{'active' : impressum}"><a ng-click="currentLocation('impressum')" href="#impressum">IMPRESSUM</a></li>
-          <li><a onclick="logout()"><i class="glyphicon glyphicon-off"></i></a></li>
+          <li><a onclick="logout()"><span style="color: #2ecc71;">{{user}}</span> <i class="glyphicon glyphicon-off"></i> </a></li>
 
       </ul>
 
-    </div>
 
+
+    </div>
+    <div class="userInteraction"></div>
   </div>
 </nav>
   <div ng-view></div>
