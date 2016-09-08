@@ -18,7 +18,7 @@ function triggerLogin(){
 		type: 'POST',
 		data: JSON.stringify(data),
 		contentType: 'application/json',
-		url: 'http://localhost:8000/authenticate',
+		url: '/authenticate',
 		success: function(data) {
 			console.log('success');
 			$('#usernameDisplay').html(getCookie("username"));

@@ -1,0 +1,111 @@
+.newsTileWrapper{
+  background-color: rgba(0, 0, 0, 0.47);
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.newsTileWrapper > div.newsTileHeader{
+  height: 25%;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  font-size: x-large;
+  background-color: rgba(46, 204, 113, 0.28);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.newsTileWrapper2{
+  background-color: rgba(0, 0, 0, 0.82);
+  width: 100%;
+  height: 425px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+
+.newsTileWrapper2 > div.newsTileHeader{
+  height: 12%;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  font-size: x-large;
+  background-color: rgba(46, 204, 113, 0.28);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.newsTileWrapper2 > div.newsTileFooter{
+  position: relative;
+  padding: 10px;
+  height: 10%;
+  background-color: rgb(47, 96, 68);
+  opacity: .2;
+  border-radius: 0px 0px 10px 10px;
+  text-align: center;
+}
+
+.newsTileWrapper2 > div.newsTileFooter:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.newsTileWrapper2 > div.newsTileContentWrapper{
+  position: relative;
+  height: 78%;
+}
+
+.newsTileWrapper2 > div.newsTileContentWrapper > div.row > span.matchDate{
+  text-align: center;
+padding: 5px;
+font-weight: bold;
+font-size: larger;
+}
+
+.newsTileWrapper2 > div.newsTileContentWrapper > div.contentHeader{
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 200;
+  line-height: 4;
+}
+.newsTileWrapper2 > div.newsTileContentWrapper > div.teamNames{
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 200;
+  border-bottom: 1px solid;
+}
+.newsTileWrapper2 > div.newsTileContentWrapper > div.contentLocation{
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid;
+}
+.newsTileWrapper2 > div.newsTileContentWrapper > div.contentSR{
+  text-align: center;
+  padding: 15px;
+}
+
+.newsTileWrapper2 > div.newsTileContentWrapper > div.contentSR > div > a,
+.newsTileWrapper2 > div.newsTileContentWrapper > div.contentSR > div > a:visited{
+  color: white;
+  font-style: normal;
+  text-decoration: none;
+}
+.newsTileWrapper2 > div.newsTileContentWrapper > div.contentSR > div > a:hover{
+  color: #1f4e33;
+  text-decoration: none;
+}
+
+.newsTileWrapper2 > div.newsTileContentWrapper > div.contentHeader.row,
+.newsTileWrapper2 > div.newsTileContentWrapper > div.contentLocation.row,
+.newsTileWrapper2 > div.newsTileContentWrapper > div.teamNames.row
+{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.teamLogo{
+  height: 50px;
+}

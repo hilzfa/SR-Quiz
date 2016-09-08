@@ -1,0 +1,3 @@
+app.controller('gControlCtrl',function(){
+
+});

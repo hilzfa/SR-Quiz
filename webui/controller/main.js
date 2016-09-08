@@ -12,9 +12,9 @@ app.config(function($routeProvider){
       templateUrl : '/quiz.html',
       controller  : 'quizCtrl'
     })
-    .when('/dahsboard',{
-      templateUrl : '/dashboard.html',
-      controller  : 'dashboardCtrl'
+    .when('/gControl',{
+      templateUrl : '/gControl.html',
+      controller  : 'gControlCtrl'
     })
     .when('/profile',{
       templateUrl : '/profile.html',

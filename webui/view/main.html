@@ -15,7 +15,7 @@
     <script src="/home.js"></script>
     <script src="/quiz.js"></script>
     <script src="/profile.js"></script>
-    <script src="/dashboard.js"></script>
+    <script src="/gControl.js"></script>
     <script src="/control.js"></script>
 
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
@@ -54,6 +54,7 @@
       <ul class="nav navbar-nav navbar-left">
         <!-- <li ng-class="{'active' : dashboard}"><a ng-click="currentLocation('dashboard')" href="#dashboard">dashboard</a></li> -->
         <!-- <li ng-class="{'active' : profile}"><a ng-click="currentLocation('profile')" href="#profile">profile</a></li> -->
+        <li ng-class="{'active' : gControl}"><a ng-click="currentLocation('gControl')" href="#gControl">GAME CONTROL</a></li>
         <li ng-class="{'active' : quiz}"><a ng-click="currentLocation('quiz')" href="#quiz">QUIZ</a></li>
       </ul>
       <!-- <ul class="nav navbar-nav navbar-center">
@@ -69,7 +70,6 @@
 
 
     </div>
-    <div class="userInteraction"></div>
   </div>
 </nav>
   <div ng-view></div>
