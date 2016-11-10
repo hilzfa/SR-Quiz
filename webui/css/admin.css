@@ -1,12 +1,20 @@
 .myBox{
     width: 100%;
-    background-color: black;
-    color: white;
+    /*background-color: rgba(0, 0, 0, 0.23);*/
+    background-color: #ecf0f1;
+    color: #2c3e50;
 
 }
 .adminHeader{
-    padding-bottom: 0 !important;
+  padding-bottom: 8px !important;
+  border-bottom: 0;
+  margin-bottom: 10px;
 
+
+}
+
+.adminHeader > span#pageTitle{
+  font-size: x-large;
 }
 .adminHeader > span > span.refreshBtn{
     line-height: 1.4;
@@ -14,17 +22,18 @@
     font-size: x-large;
 }
 .adminHeader > span > span.refreshBtn:hover{
-    color: #1b6d85;
+    color: #2ecc71;
     cursor: pointer;
 }
 .adminHeader > span > input[type='search']{
     border: none;
     color: white !important;
-    background-color: transparent;
-    border-bottom: 3px dashed transparent;
+    background-color: #2c3e50;
+    /*border-bottom: 3px dashed rgba(0, 0, 0, 0.36);*/
     border-left: 2px solid white;
+    /* padding-top: 10px; */
+    padding: 5px;
     padding-left: 10px;
-    padding-top: 10px;
 
 }
 .adminHeader > span > input[type='search']:focus{
@@ -32,36 +41,56 @@
     outline: none;
 }
 .adminForm > div > div.form-group > textarea{
-    min-height: 200px;
-    max-height: 200px;
-    resize: none;
+  min-height: 200px;
+  max-height: 200px;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  box-shadow: 0px 0px 0px 0px #2c3e50;
+  border: 1px dashed;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  resize: none;
 }
+.adminForm > div > div.form-group > textarea:focus{
+  border-color: transparent;
+  -webkit-box-shadow: 0px 0px 15px 0px #2c3e50;
+  box-shadow:  0px 0px 15px 0px #2c3e50;
+}
+
 .publishBtn{
-    display: inline-block;
-    float: right;
-    margin-top: 10px;
-    margin-bottom: 50px !important;
-    padding: 10px;
-    text-align: center;
-    color: white;
-    background-color: #1b6d85;
-    border: 2px solid #1b6d85;
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 50px !important;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  background-color: #2c3e50;
+  border: 2px solid #2c3e50;
+  font-weight: 900;
 }
-.publishBtn:hover{
-    cursor: pointer;
-    border: 2px solid rgba(175, 220, 255, 0.72);
+.publishBtn:hover,
+.addEntryBtn:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 0px #2c3e50;
+  /*border: 2px solid rgba(175, 220, 255, 0.72);*/
+}
+.publishBtn:active,
+.addEntryBtn:active{
+  color: #2c3e50;
+  background-color: #ecf0f1;
 }
 .addEntryBtn{
-    padding: 10px;
-    text-align: center;
-    color: white;
-    background-color: #1b6d85;
-    margin-bottom: 40px;
-    opacity: .7;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  background-color: #2c3e50;
+  margin-bottom: 40px;
+  font-weight: 900;
 }
 .addEntryBtn:hover{
     cursor: pointer;
-    opacity: 1;
 }
 .errorMessage{
     background-color: red;

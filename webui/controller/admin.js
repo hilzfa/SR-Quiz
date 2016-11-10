@@ -1,7 +1,7 @@
 /**
  * Created by D062653 on 05.07.2016.
  */
-app.controller('adminCtrl', function($scope, $timeout){
+app.controller('adminCtrl', function($scope, $timeout, $route){
     $scope.questionArray = [];
     $scope.fetchQuestions = function () {
 
@@ -56,7 +56,7 @@ app.controller('adminCtrl', function($scope, $timeout){
         $('#errorMsg').html(sMsg);
 
     };
-    
+
     $scope.createNewEntry = function(){
 
         var newEntry = {};
@@ -86,6 +86,10 @@ app.controller('adminCtrl', function($scope, $timeout){
         }
 
     };
+
+    $scope.refresh = function(){
+      $route.reload();
+    }
 
 
 
