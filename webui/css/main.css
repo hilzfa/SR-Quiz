@@ -94,3 +94,7 @@ a.navbar-brand{
 nav.navbar.navbar-fixed-top > div.container-fluid{
   background-color: rgba(0, 0, 0, 0.82);
 }
+
+#exampleModal{
+  color: black;
+}

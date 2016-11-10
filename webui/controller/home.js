@@ -4,6 +4,8 @@ app.controller('homeCtrl',['$scope','$location',function($scope,$loacation){
   $scope.user = JSON.parse(localStorage.getItem("user")).username.toUpperCase();
   $scope.admin = JSON.parse(localStorage.getItem("user")).adminFlag;
 
+  $scope.editSettings = false;
+
   $scope.setImg = function(){
     var url = JSON.parse(localStorage.getItem("user")).imgUrl;
       if(url != undefined){
@@ -14,6 +16,9 @@ app.controller('homeCtrl',['$scope','$location',function($scope,$loacation){
   };
 
   $scope.setImg();
+
+
+
 
   $scope.currentLocation = function(loc){
     switch (loc) {

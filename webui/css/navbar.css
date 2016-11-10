@@ -70,3 +70,37 @@ nav.navbar{
   padding-bottom: 3px;
 
 }
+
+.menuPopover > .arrow:after{
+  border-bottom-color: black !important;
+}
+.menuPopover {
+  background-color: black !important;
+  width: 200px;
+}
+
+.menu-header{
+  text-align: center;
+  border-bottom: 1px solid;
+}
+.menu-footer{
+  text-align: center;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 0px 0px 5px 5px;
+}
+.menu-content{
+  text-align: center;
+  padding: 10px;
+}
+.popover-content{
+  padding: 0;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+  padding-top: 9px !important;
+}
+.menu-footer:hover,
+.menu-content:hover{
+  cursor: pointer;
+  background-color: #2ecc71;
+}

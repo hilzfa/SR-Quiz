@@ -5,10 +5,12 @@
 
     <title>SR-Quiz</title>
 
+
     <script src="/jquery/dist/jquery.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
     <script src="/angular/angular.js"></script>
     <script src="/angular/angular-route.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.js"></script>
+
 
     <script src="/main.js"></script>
     <script src="/admin.js"></script>
@@ -63,8 +65,7 @@
       <ul class="nav navbar-nav navbar-right">
           <li ng-if="admin"><a ng-click="currentLocation('adminPanel')" href="#adminPanel">ADMINPANEL</a></li>
           <li ng-class="{'active' : impressum}"><a ng-click="currentLocation('impressum')" href="#impressum">IMPRESSUM</a></li>
-          <li><a onclick="logout()"><span style="color: #2ecc71;">{{user}}</span> <i class="glyphicon glyphicon-off"></i> </a></li>
-
+          <li><a data-toggle="popover"><span style="color: #2ecc71;">{{user}}</span>  <i class="glyphicon glyphicon-chevron-down"></i> </a></li>
       </ul>
 
 
@@ -73,6 +74,31 @@
   </div>
 </nav>
   <div ng-view></div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Deine Einstellungen, {{user}} (32sr0883) </h4>
+      </div>
+      <div ng-show=editSettings class="modal-body">
+        testedit
+      </div>
+      <div ng-show=!editSettings class="modal-body settingsWrapper">
+        <div class="personalSettings row">
+          <div class="col-md-5"><b>E-Mail:</b></div>
+          <div class="col-md-5">fabian.hilz@fortunakirchfeld.de</div>
+          <button class="btn btn-default col-md-2">Edit</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Save and Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <div class="bottomLine">| 2016 SR-Quiz &copy; by Locke21 |</div>
 
