@@ -107,5 +107,5 @@ app.get('/allQuestions', function(req,res){
   });
 
 });
-app.listen(8000);
-console.log("Server is now running on port 8000");
+app.listen(9123);
+console.log("Server is now running on port 9123");

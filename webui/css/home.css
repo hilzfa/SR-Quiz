@@ -1,0 +1,21 @@
+
+.legend{
+  font-size: 12px;
+}
+
+rect{
+  stroke-width: 2;
+}
+
+.chartBox{
+  text-align: center;
+}
+
+.chartBox > div.modal-header{
+  font-size: large;
+font-weight: 600;
+}
+
+.secondBox{
+  margin-top: 10px;
+}
