@@ -1,4 +1,4 @@
-var app = angular.module('quiz',['ngRoute']);
+var app = angular.module('quiz',['ngRoute', 'ngMaterial']);
 
 $('#exampleModal').on('shown.bs.modal', function () {
 
@@ -54,4 +54,5 @@ app.config(function($routeProvider){
       templateUrl : '/admin.html',
       controller  : 'adminCtrl'
   });
+
 });

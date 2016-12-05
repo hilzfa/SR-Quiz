@@ -66,7 +66,7 @@ app.controller('adminCtrl', function($scope, $timeout, $route){
             $scope.loading=true;
             $.ajax({
                 "type":"POST",
-                "url":"http://localhost:8000/createQuestionEntry",
+                "url":"/createQuestionEntry",
                 "contentType":"application/json",
                 "data":JSON.stringify(newEntry),
                 success:function(data){

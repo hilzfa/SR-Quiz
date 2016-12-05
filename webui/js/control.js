@@ -13,7 +13,7 @@ var logout = function(){
 
 };
 
-var settings = function(){
-    $('#exampleModal').modal();
-    $('.popover').popover('hide');
-  }
+// var settings = function(){
+//     $('#exampleModal').modal();
+//     $('.popover').popover('hide');
+//   }

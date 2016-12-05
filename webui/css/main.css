@@ -82,3 +82,35 @@ nav.navbar.navbar-fixed-top > div.container-fluid{
 #exampleModal{
   color: black;
 }
+
+.fabSpeedDialdemoBasicUsage .text-capitalize {
+  text-transform: capitalize; }
+
+.fabSpeedDialdemoBasicUsage .md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {
+  background-color: #000 !important; }
+
+.fabSpeedDialdemoBasicUsage p.note {
+  font-size: 1.2rem; }
+
+.fabSpeedDialdemoBasicUsage .lock-size {
+  min-width: 300px;
+  min-height: 300px;
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto; }
+
+#fixedMenu{
+  position: fixed;
+  top:95px;
+  right: 0;
+  z-index: 3;
+  /*left: calc(50% - 56px/2);*/
+
+}
+button.md-fab.md-warn.md-button.md-ink-ripple{
+  background-color: #2ecc71;
+}
+.md-button.md-warn.md-fab:not([disabled]):hover{
+  background-color: #19703e;
+}

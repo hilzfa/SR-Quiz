@@ -1,7 +1,64 @@
-app.controller('homeCtrl',['$scope','$location',function($scope,$loacation){
+app.controller('homeCtrl',['$scope','$location','$mdDialog',function DemoCtrl($scope,$loacation,$mdDialog){
   $scope.quiz = false;
 
-  $scope.user = JSON.parse(localStorage.getItem("user")).username.toUpperCase();
+ //  $scope.data = {
+ //   cb1: true,
+ //   cb4: true,
+ //   cb5: false
+ // };
+ //
+ // $scope.message = 'false';
+ //
+ // $scope.onChange = function(cbState) {
+ //   $scope.message = cbState;
+ // };
+  // $scope.openMenu = function($mdMenu, ev) {
+  //     originatorEv = ev;
+  //     console.log("test");
+  //     $mdMenu.open(ev);
+  //   };
+
+    this.notificationsEnabled = true;
+    this.toggleNotifications = function() {
+      this.notificationsEnabled = !this.notificationsEnabled;
+    };
+
+    $scope.isOpen = false;
+
+    $scope.redial = function(ev) {
+      $mdDialog.show({
+      controller: DialogController,
+      templateUrl: 'settingsDialog.tmpl.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+      fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+    };
+
+    $scope.showConfirm = function(ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    var confirm = $mdDialog.confirm()
+          .title('Möchtest du dich wirklich ausloggen?')
+          .targetEvent(ev)
+          .ok('Ja, ausloggen!')
+          .cancel('Nein, doch nicht!');
+
+    $mdDialog.show(confirm).then(function() {
+      $.post('/logout').done(function(){
+          window.location = window.location.search;
+      });
+    }, function() {
+      return;
+    });
+  };
+
+  $scope.user = JSON.parse(localStorage.getItem("user")).username;
   $scope.admin = JSON.parse(localStorage.getItem("user")).adminFlag;
 
   $scope.editSettings = false;
@@ -62,5 +119,19 @@ app.controller('homeCtrl',['$scope','$location',function($scope,$loacation){
         $scope.quiz = false;
 
     }
+  }
+
+  function DialogController($scope, $mdDialog) {
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
   }
 }]);

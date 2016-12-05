@@ -10,6 +10,11 @@
     <script src="/angular/angular.js"></script>
     <script src="/angular/angular-route.js"></script>
 
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
 
     <!-- d3 -->
     <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -22,6 +27,8 @@
     <script src="/profile.js"></script>
     <script src="/gControl.js"></script>
     <script src="/control.js"></script>
+
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css">
@@ -68,7 +75,8 @@
       <ul class="nav navbar-nav navbar-right">
           <li ng-if="admin"><a ng-click="currentLocation('adminPanel')" href="#adminPanel">ADMINPANEL</a></li>
           <li ng-class="{'active' : impressum}"><a ng-click="currentLocation('impressum')" href="#impressum">IMPRESSUM</a></li>
-          <li><a data-toggle="popover"><span style="color: #2ecc71;">{{user}}</span>  <i class="glyphicon glyphicon-chevron-down"></i> </a></li>
+          <!-- <li><a data-toggle="popover"><span style="color: #2ecc71;">{{user}}</span>  <i class="glyphicon glyphicon-chevron-down"></i> </a></li> -->
+
       </ul>
 
 
@@ -76,9 +84,33 @@
     </div>
   </div>
 </nav>
+
+<div layout="column" id="fixedMenu" ng-cloak>
+  <md-fab-speed-dial md-open="isOpen" md-direction="down" class="md-fling">
+    <md-fab-trigger>
+    <md-button aria-label="menu" class="md-fab md-warn">
+      <!-- <md-icon md-svg-src="img/icons/menu.svg"></md-icon> -->
+      <i md-menu-origin class="glyphicon glyphicon-option-vertical"></i>
+    </md-button>
+    </md-fab-trigger>
+
+    <md-fab-actions>
+    <md-button aria-label="menu1" ng-click="redial($event)" class="md-fab md-raised md-mini">
+      <i md-menu-origin class="glyphicon glyphicon-cog"></i>
+    </md-button>
+    <md-button  aria-label="menu1" class="md-fab md-raised md-mini">
+      <i md-menu-origin class="glyphicon glyphicon-th"></i>
+    </md-button>
+    <md-button aria-label="menu1" class="md-fab md-raised md-mini" ng-click="showConfirm($event)">
+      <i md-menu-origin class="glyphicon glyphicon-off"></i>
+    </md-button>
+    </md-fab-actions>
+  </md-fab-speed-dial>
+</div>
+
   <div ng-view></div>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -92,18 +124,25 @@
         <div class="personalSettings row">
           <div class="col-md-5"><b>E-Mail:</b></div>
           <div class="col-md-5">fabian.hilz@fortunakirchfeld.de</div>
-          <button class="btn btn-default col-md-2">Edit</button>
+          <div class="inset" ng-cloak>
+            <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="data.cb5">
+              Switch (md-primary): No Ink
+            </md-switch>
+
+          </div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Save and Close</button>
+        <md-button class="md-raised">Button</md-button>
+        <md-button class="md-raised md-primary">Save &amp; Close</md-button>
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-  <div class="bottomLine">| 2016 SR-Quiz &copy; by Locke21 |</div>
+  <div class="bottomLine">| 2016 SR-Quiz &copy; by Locke21 |
+  </div>
 
   </body>
 </html>
