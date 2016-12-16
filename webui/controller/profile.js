@@ -1,12 +1,12 @@
 app.controller('profileCtrl',function($scope){
-  $.ajax({
-      "url": "https://api.mlab.com/api/1/databases/srquiz/collections/questions?q={'version':'02-2016'}&apiKey=v3PSrViTDDYV-FESlSPMCn0nu5tbG1LR",
-      "type":"GET",
-      "contentType":"application/json",
-      success:function(data){
-          console.log("anzahl der Fragen: "+data.length);
-      }
-  });
+    $.ajax({
+        "url": "https://api.mlab.com/api/1/databases/srquiz/collections/questions?q={'version':'02-2016'}&apiKey=v3PSrViTDDYV-FESlSPMCn0nu5tbG1LR",
+        "type":"GET",
+        "contentType":"application/json",
+        success:function(data){
+            console.log("anzahl der Fragen: "+data.length);
+        }
+    });
     $scope.keys = [];
     $('#myTest').on("keydown", function(event){
         if(event.keyCode == 13){

@@ -1,0 +1,11 @@
+md-tabs .md-tab.md-active{
+    color: #2c3e50;
+    font-weight: bold;
+}
+md-tabs md-ink-bar{
+    color: transparent !important;
+    background-color: #2ecc71;
+}
+md-pagination-wrapper{
+    width: 100% !important;
+}

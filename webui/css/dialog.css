@@ -1,3 +1,19 @@
 .dialogHeader{
   background-color: #2ecc71;
+  font-size: larger;
+  font-weight: bold;
+  color: white;
+}
+.userImage{
+  height: 128px;
+  width: 128px;
+  border-radius: 64px;
+  position: relative;
+  top: 0;
+  left: calc( 50% - 128px/2);
+  /*
+  background: url("d") no-repeat center;
+  */
+  background-size: cover;
+  border: 1px solid black;
 }
